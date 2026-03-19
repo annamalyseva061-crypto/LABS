@@ -1,0 +1,34 @@
+using System;
+
+namespace DensityCalculation
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Title = "Работа 2. Плотность материала";
+            
+            Console.WriteLine("Формула: m = p * V, где p - плотность");
+            Console.WriteLine("Следовательно, p = m / V\n");
+            
+            Console.Write("Введите массу тела (m, кг): ");
+            double mass = double.Parse(Console.ReadLine());
+            
+            Console.Write("Введите объем тела (V, м³): ");
+            double volume = double.Parse(Console.ReadLine());
+
+            if (volume == 0)
+            {
+                Console.WriteLine("Объем не может быть равен нулю!");
+            }
+            else
+            {
+                double density = mass / volume;
+                Console.WriteLine($"\nПлотность материала: {density:F2} кг/м³");
+            }
+            
+            Console.Write("\nНажми любую клавишу...");
+            Console.ReadKey();
+        }
+    }
+}
