@@ -1,0 +1,32 @@
+using System;
+
+namespace TrianglePerimeter
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Title = "Периметр прямоугольного треугольника";
+            
+            Console.WriteLine("Периметр: P = a + b + c\n");
+            
+            Console.Write("Введите длину катета a: ");
+            double a = double.Parse(Console.ReadLine());
+            
+            Console.Write("Введите длину катета b: ");
+            double b = double.Parse(Console.ReadLine());
+            
+            double c = Math.Sqrt(a * a + b * b);
+            
+            double perimeter = a + b + c;
+            
+            Console.WriteLine($"\nКатет a = {a:F2}");
+            Console.WriteLine($"Катет b = {b:F2}");
+            Console.WriteLine($"Гипотенуза c = {c:F2}");
+            Console.WriteLine($"Периметр P = {perimeter:F2}");
+            
+            Console.Write("\nНажми любую клавишу...");
+            Console.ReadKey();
+        }
+    }
+}
