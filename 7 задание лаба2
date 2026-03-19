@@ -1,0 +1,25 @@
+using System;
+
+namespace ImplicitConversion
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Title = "Неявное преобразование";
+            
+            int a = 3;
+            double b = 2.6;
+            double sum = a + b; 
+            
+            Console.WriteLine($"a (int) = {a}");
+            Console.WriteLine($"b (double) = {b}");
+            Console.WriteLine($"Сумма = {sum}");
+            double result = a + b;
+            Console.WriteLine($"Результат в double: {result}");
+            
+            Console.Write("\nНажми любую клавишу...");
+            Console.ReadKey();
+        }
+    }
+}
