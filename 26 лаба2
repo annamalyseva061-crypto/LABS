@@ -1,0 +1,71 @@
+using System;
+
+namespace ExpressionWithParentheses
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Title = "Вычисление выражения с расстановкой скобок";
+            
+            int a, b, c;
+            a = b = c = 2;
+            
+            Console.WriteLine($"Исходные значения: a = {a}, b = {b}, c = {c}");
+            Console.WriteLine("Исходное выражение: double z = a * b + c++ / b - a * b * --c;\n");
+            
+          
+            a = b = c = 2;
+            double z = a * b + (double)c++ / b - a * b * --c;
+            Console.WriteLine($"Исходный результат (без доп. скобок): {z:F2}");
+            
+            Console.WriteLine("\n=== Результаты с расстановкой скобок ===\n");
+            
+            // а) 3.66
+            a = b = c = 2;
+            z = (a * b + c++) / (b - a * b * --c);
+            Console.WriteLine($"а) Результат 3.66: (a * b + c++) / (b - a * b * --c) = {z:F2}");
+            
+            // б) -1
+            a = b = c = 2;
+            z = a * (b + c++) / (b - a) * b * --c;
+            Console.WriteLine($"б) Результат -1: a * (b + c++) / (b - a) * b * --c = {z:F2}");
+            
+            // в) 2
+            a = b = c = 2;
+            z = (a * b + c++) / b - a * b * --c;
+            Console.WriteLine($"в) Результат 2: (a * b + c++) / b - a * b * --c = {z:F2}");
+            
+            // г) -2
+            a = b = c = 2;
+            z = a * (b + c++) / (b - a * b * --c);
+            Console.WriteLine($"г) Результат -2: a * (b + c++) / (b - a * b * --c) = {z:F2}");
+            
+            // д) -4
+            a = b = c = 2;
+            z = a * (b + c++) / b - a * b * --c;
+            Console.WriteLine($"д) Результат -4: a * (b + c++) / b - a * b * --c = {z:F2}");
+            
+            Console.WriteLine("\n=== Пошаговое вычисление для варианта а) ===");
+            a = b = c = 2;
+            Console.WriteLine($"Начальные значения: a={a}, b={b}, c={c}");
+            
+            double step1 = a * b;
+            Console.WriteLine($"1) a * b = {step1}");
+            
+            double step2 = step1 + c;
+            Console.WriteLine($"2) step1 + c (c++: сначала используем c=2, потом увеличиваем) = {step2}");
+            double cAfter = c; 
+            Console.WriteLine($"   После c++: c стало = {cAfter}");
+            
+            double step3 = b - a * b * c;
+            Console.WriteLine($"3) b - a * b * c (текущий c={c}) = {b} - {a * b * c} = {step3}");
+            
+            z = step2 / step3;
+            Console.WriteLine($"4) step2 / step3 = {z:F2}");
+            
+            Console.Write("\nНажми любую клавишу...");
+            Console.ReadKey();
+        }
+    }
+}
