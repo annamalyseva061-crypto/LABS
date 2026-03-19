@@ -1,3 +1,19 @@
-<Solution>
-  <Project Path="лаба2/лаба2.csproj" />
-</Solution>
+using System;
+
+namespace RandomNumbers
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Title = "Работа 2. Генератор случайных чисел";
+            Random rnd = new Random();
+            Console.WriteLine("Случайное число от 0 до +∞: " + rnd.Next());
+            Console.WriteLine("Случайное число от 0 до 5: " + rnd.Next(5));
+            Console.WriteLine("Случайное число от -5 до 5: " + rnd.Next(-5, 5));
+
+            Console.Write("\nНажми любую клавишу...");
+            Console.ReadKey();
+        }
+    }
+}
