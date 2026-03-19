@@ -1,0 +1,25 @@
+using System;
+
+namespace DivisionWithConst
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Title = "Деление с константой";
+            
+            float z;
+            int a = 1, b = 2, c = 3;
+            const int m = 3;
+            
+            z = (a + b + c) / m;
+            
+            Console.WriteLine($"a = {a}, b = {b}, c = {c}, m = {m}");
+            Console.WriteLine($"z = (a + b + c) / m = {z}");
+            float zCorrect = (float)(a + b + c) / m;
+            Console.WriteLine($"Правильное деление (с преобразованием): {zCorrect}");
+            Console.Write("\nНажми любую клавишу...");
+            Console.ReadKey();
+        }
+    }
+}
