@@ -1,0 +1,73 @@
+using System;
+
+namespace QuadraticEquation
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Title = "Решение уравнения ax² - bx + c = e";
+            
+            Console.WriteLine("Уравнение: ax² - bx + c = e\n");
+            Console.WriteLine("Перенесем e в левую часть: ax² - bx + (c - e) = 0");
+            Console.WriteLine("Обозначим C = c - e\n");
+            
+            Console.Write("Введите коэффициент a: ");
+            double a = double.Parse(Console.ReadLine());
+            
+            Console.Write("Введите коэффициент b: ");
+            double b = double.Parse(Console.ReadLine());
+            
+            Console.Write("Введите коэффициент c: ");
+            double c = double.Parse(Console.ReadLine());
+            
+            Console.Write("Введите значение e: ");
+            double e = double.Parse(Console.ReadLine());
+            
+            double C = c - e;
+            
+            Console.WriteLine($"\nПолученное уравнение: {a}x² - {b}x + ({C}) = 0");
+            
+            if (a == 0)
+            {
+                if (b == 0)
+                {
+                    if (C == 0)
+                        Console.WriteLine("Бесконечно много решений");
+                    else
+                        Console.WriteLine("Нет решений");
+                }
+                else
+                {
+                    double x = C / b;
+                    Console.WriteLine($"Линейное уравнение, x = {x:F2}");
+                }
+            }
+            else
+            {
+                double discriminant = b * b - 4 * a * C;
+                
+                Console.WriteLine($"Дискриминант: {discriminant:F2}");
+                
+                if (discriminant < 0)
+                {
+                    Console.WriteLine("Нет действительных корней");
+                }
+                else if (discriminant == 0)
+                {
+                    double x = b / (2 * a);
+                    Console.WriteLine($"Один корень: x = {x:F2}");
+                }
+                else
+                {
+                    double x1 = (b + Math.Sqrt(discriminant)) / (2 * a);
+                    double x2 = (b - Math.Sqrt(discriminant)) / (2 * a);
+                    Console.WriteLine($"Два корня: x1 = {x1:F2}, x2 = {x2:F2}");
+                }
+            }
+            
+            Console.Write("\nНажми любую клавишу...");
+            Console.ReadKey();
+        }
+    }
+}
