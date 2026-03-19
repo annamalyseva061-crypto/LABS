@@ -1,0 +1,25 @@
+using System;
+
+namespace NumbersWithSpaces
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Title = "Вывод чисел с пробелами";
+            
+            // Задание 13
+            Console.WriteLine("Задание 13: 1 13 49");
+            Console.WriteLine($"1 13 {49}");
+            Console.WriteLine($"\nАльтернативный способ: {1} {13} {49}");
+            
+            // Задание 14
+            Console.WriteLine("\nЗадание 14: 7  15  100 (с двумя пробелами)");
+            Console.WriteLine($"7  15  {100}");
+            Console.WriteLine($"7  15  {100}");
+            
+            Console.Write("\nНажми любую клавишу...");
+            Console.ReadKey();
+        }
+    }
+}
