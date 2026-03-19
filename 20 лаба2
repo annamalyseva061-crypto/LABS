@@ -1,0 +1,29 @@
+using System;
+
+namespace Hypotenuse
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Title = "Гипотенуза прямоугольного треугольника";
+            
+            Console.WriteLine("Теорема Пифагора: a² + b² = c²\n");
+            
+            Console.Write("Введите длину катета a: ");
+            double a = double.Parse(Console.ReadLine());
+            
+            Console.Write("Введите длину катета b: ");
+            double b = double.Parse(Console.ReadLine());
+            
+            double c = Math.Sqrt(a * a + b * b);
+            
+            Console.WriteLine($"\nГипотенуза c = {c:F2}");
+            Console.WriteLine($"Проверка: {a:F2}² + {b:F2}² = {c:F2}²");
+            Console.WriteLine($"{a * a:F2} + {b * b:F2} = {c * c:F2}");
+            
+            Console.Write("\nНажми любую клавишу...");
+            Console.ReadKey();
+        }
+    }
+}
