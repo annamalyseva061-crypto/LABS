@@ -1,0 +1,22 @@
+using System;
+
+namespace NumberMessage
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Title = "Вывод числа с сообщением";
+            
+            Console.Write("Введите число: ");
+            double number = double.Parse(Console.ReadLine());
+            
+            Console.WriteLine($"Вы ввели число {number}");
+            
+            Console.WriteLine($"{number} --- вот какое число Вы ввели");
+            
+            Console.Write("\nНажми любую клавишу...");
+            Console.ReadKey();
+        }
+    }
+}
