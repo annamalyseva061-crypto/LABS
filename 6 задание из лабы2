@@ -1,0 +1,26 @@
+using System;
+
+namespace ExplicitConversion
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Title = "Явное преобразование";
+            
+            float a = 3.2f;
+            decimal b = 2.6m;
+            double c = 4.5;
+    
+            c = a + (double)b + c; // преобразуем decimal в double
+            
+            Console.WriteLine($"a (float) = {a}");
+            Console.WriteLine($"b (decimal) = {b}");
+            Console.WriteLine($"c (double) = {c}");
+            Console.WriteLine($"Сумма = {c}");
+            
+            Console.Write("\nНажми любую клавишу...");
+            Console.ReadKey();
+        }
+    }
+}
