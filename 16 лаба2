@@ -1,0 +1,27 @@
+using System;
+
+namespace AverageGeometric
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Title = "Среднее арифметическое и геометрическое";
+            
+            Console.Write("Введите первое число: ");
+            double x = double.Parse(Console.ReadLine());
+            
+            Console.Write("Введите второе число: ");
+            double y = double.Parse(Console.ReadLine());
+            double arithmeticMean = (x + y) / 2;
+            double geometricMean = Math.Sqrt(x * y);
+            
+            Console.WriteLine($"\nЧисла: {x} и {y}");
+            Console.WriteLine($"Среднее арифметическое: {arithmeticMean}");
+            Console.WriteLine($"Среднее геометрическое: {geometricMean}");
+            
+            Console.Write("\nНажми любую клавишу...");
+            Console.ReadKey();
+        }
+    }
+}
