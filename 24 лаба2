@@ -1,0 +1,71 @@
+using System;
+
+namespace PowerByMultiplication
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Title = "Возведение в степень через умножение";
+            
+            Console.Write("Введите число a: ");
+            int a = int.Parse(Console.ReadLine());
+            
+            Console.WriteLine($"\nИсходное число: a = {a}");
+            
+            // а) 
+            int a4 = a;
+            a4 = a4 * a4; // a²
+            a4 = a4 * a4; // a⁴
+            Console.WriteLine($"\nа) a⁴ за две операции: {a4}");
+            
+            // б) 
+            int a6 = a;
+            int temp = a6 * a6; 
+            a6 = temp * temp; 
+            a6 = a6 * temp; 
+            Console.WriteLine($"б) a⁶ за три операции: {a6}");
+            
+            // в) 
+            int a7 = a;
+            int a2 = a7 * a7; 
+            int a4_2 = a2 * a2; 
+            int a6_2 = a4_2 * a2; 
+            a7 = a6_2 * a7; // a⁷
+            Console.WriteLine($"в) a⁷ за четыре операции: {a7}");
+            
+            // г) 
+            int a8 = a;
+            a8 = a8 * a8; 
+            a8 = a8 * a8;
+            a8 = a8 * a8; 
+            Console.WriteLine($"г) a⁸ за три операции: {a8}");
+            
+            // д) 
+            int a9 = a;
+            int a3 = a9 * a9 * a9; 
+            int a9_2 = a3 * a3; 
+            a9 = a9_2 * a3;
+            Console.WriteLine($"д) a⁹ за четыре операции: {a9}");
+            
+            // е)
+            int a10 = a;
+            int a5 = a10 * a10; 
+            a5 = a5 * a5; 
+            a5 = a5 * a10; 
+            a10 = a5 * a5; 
+            Console.WriteLine($"е) a¹⁰ за четыре операции: {a10}");
+            
+            Console.WriteLine($"\nПроверка с помощью Math.Pow:");
+            Console.WriteLine($"a⁴ = {Math.Pow(a, 4)}");
+            Console.WriteLine($"a⁶ = {Math.Pow(a, 6)}");
+            Console.WriteLine($"a⁷ = {Math.Pow(a, 7)}");
+            Console.WriteLine($"a⁸ = {Math.Pow(a, 8)}");
+            Console.WriteLine($"a⁹ = {Math.Pow(a, 9)}");
+            Console.WriteLine($"a¹⁰ = {Math.Pow(a, 10)}");
+            
+            Console.Write("\nНажми любую клавишу...");
+            Console.ReadKey();
+        }
+    }
+}
