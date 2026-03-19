@@ -1,0 +1,21 @@
+using System;
+
+namespace SquareNumber
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Title = "Квадрат числа";
+            
+            Console.Write("Введите целое число a: ");
+            int a = int.Parse(Console.ReadLine());
+            
+            int square = a * a;
+            Console.WriteLine($"Квадрат числа {a} = {square}");
+            
+            Console.Write("\nНажми любую клавишу...");
+            Console.ReadKey();
+        }
+    }
+}
