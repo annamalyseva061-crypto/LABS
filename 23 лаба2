@@ -1,0 +1,32 @@
+using System;
+
+namespace AbsoluteAverage
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Title = "Работа 2. Среднее арифметическое и геометрическое модулей";
+            
+            Console.Write("Введите первое число: ");
+            double x = double.Parse(Console.ReadLine());
+            
+            Console.Write("Введите второе число: ");
+            double y = double.Parse(Console.ReadLine());
+            
+            double absX = Math.Abs(x);
+            double absY = Math.Abs(y);
+            
+            double arithmeticMean = (absX + absY) / 2;
+            double geometricMean = Math.Sqrt(absX * absY);
+            
+            Console.WriteLine($"\nИсходные числа: {x} и {y}");
+            Console.WriteLine($"Их модули: |{x}| = {absX}, |{y}| = {absY}");
+            Console.WriteLine($"Среднее арифметическое модулей: {arithmeticMean:F2}");
+            Console.WriteLine($"Среднее геометрическое модулей: {geometricMean:F2}");
+            
+            Console.Write("\nНажми любую клавишу...");
+            Console.ReadKey();
+        }
+    }
+}
